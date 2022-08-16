@@ -18,3 +18,7 @@ You can run the `main.py` file than type your calculation
 
 or import the `main.py` file and call the `run` function with your calculation as an argument.
 
+
+
++, -, /, *, //, %, (), integers and floats are supported
+
