@@ -29,7 +29,6 @@ class Lexer:
             EUCL_DIV
             MULT
             MODULO
-            EXPO
             OPEN_PAREN
             CLOSE_PAREN
         """
@@ -68,10 +67,6 @@ class Lexer:
 
             elif self.char == "%":
                 self.tokens.append("MODULO")
-                self.advance()
-
-            elif self.char == "^":
-                self.tokens.append("EXPO")
                 self.advance()
 
             elif self.char == "(":

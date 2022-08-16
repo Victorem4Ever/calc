@@ -39,8 +39,5 @@ class Interpreter:
             raise errors.DivisionByZero("Can't divid a number by zero")
         return float(self.visit(node.left)) // float(result)
 
-    def visit_expo(self, node):
-        return float(self.visit(node.left)) ** float(self.visit(node.right))    
-
     def token_type(self, token: str) -> str:
         return token.split(":")[0]
