@@ -13,7 +13,8 @@ class Parser:
             "MINUS",
             "DIV",
             "EUCL_DIV",
-            "MODULO"
+            "MODULO",
+            "EXPO"
         ]
     
     def parse(self):
@@ -56,7 +57,7 @@ class Parser:
         return self.binary_operation(self.term, ("PLUS", "MINUS"))
 
     def term(self) -> None:
-        return self.binary_operation(self.factor, ("DIV", "MULT", "EUCL_DIV", "MODULO"))
+        return self.binary_operation(self.factor, ("DIV", "MULT", "EUCL_DIV", "MODULO", "EXPO"))
 
     def binary_operation(self, function: callable, operations: Union[tuple, list]) -> Union[int, float, "Node"]:
 

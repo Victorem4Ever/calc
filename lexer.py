@@ -29,6 +29,7 @@ class Lexer:
             EUCL_DIV
             MULT
             MODULO
+            EXPO
             OPEN_PAREN
             CLOSE_PAREN
         """
@@ -38,7 +39,6 @@ class Lexer:
         while self.char is not None:
 
             if self.char.isspace():
-                # self.make_space()
                 self.advance()
 
             elif self.char.isdecimal():
@@ -70,6 +70,10 @@ class Lexer:
                 self.tokens.append("MODULO")
                 self.advance()
 
+            elif self.char == "^":
+                self.tokens.append("EXPO")
+                self.advance()
+
             elif self.char == "(":
                 self.tokens.append("OPEN_PAREN")
                 self.advance()
@@ -88,16 +92,6 @@ class Lexer:
         
         self.current_pos += 1
         self.char = self.code[self.current_pos]
-
-    """
-    def make_space(self) -> None:
-        spaces = ""
-        while self.char is not None and self.char.isspace():
-            spaces += self.char
-            self.advance()
-
-        self.tokens.append(f"BLANK:{spaces}")
-    """
 
     def make_number(self) -> None:
         number = ""

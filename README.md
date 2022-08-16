@@ -20,5 +20,5 @@ or import the `main.py` file and call the `run` function with your calculation a
 
 
 
-+, -, /, *, //, %, (), integers and floats are supported
++, -, /, *, //, %, ^, (), integers and floats are supported
 
